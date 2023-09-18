@@ -18,20 +18,20 @@ public:
     }
 
     int BinarySearch(vector<int>& nums,int s,int e,int target){
-        // int start = s ;
-        // int end = e ;
-        int mid = s+(e-s)/2 ;
-        while(s<=e){
+        int start = s ;
+        int end = e ;
+        int mid = start+(end-start)/2 ;
+        while(start<=end){
             if(nums[mid]==target){
                 return mid ;
             }
             else if(nums[mid]<target){
-                s=mid+1 ;
+                start=mid+1 ;
             }
             else{
-                e=mid-1 ;
+                end=mid-1 ;
             }
-            mid = s+(e-s)/2 ;
+            mid = start+(end-start)/2 ;
         }
         return -1 ;
     }
