@@ -4,14 +4,17 @@ public:
         vector<string>res;
         int c = 1;
         int s = target.size();
-        for(int i=0;i<s;i++){
-            while(c<target[i]){
+        int i = 0;
+        while(i<s){
+            if(target[i]==c){
+                res.push_back("Push");
+                i++;
+            }
+            else{
                 res.push_back("Push");
                 res.push_back("Pop");
-                c=c+1;
             }
-            res.push_back("Push");
-            c=c+1;
+            c++;
         }
         return res;
     }
